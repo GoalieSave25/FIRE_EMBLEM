@@ -1,21 +1,24 @@
 
 public class Weapon
 {
-	static int dmg = 0;
-	static int rng = 0;
-	static double acc = 0;
-	static double crit = 0;
-	static String name = "";
+	// Private Field Declarations
+	private int dmg = 0;
+	private int rng = 0;
+	private double acc = 0;
+	private double crit = 0;
+	private String name = "";
 	
-	public Weapon(int dmg, int rng, double acc, double crit, String name)
+	// Constructor
+	public Weapon(int DMG, int RNG, double ACC, double CRIT, String NAME)
 	{
-		this.dmg = dmg;
-		this.rng = rng;
-		this.acc = acc;
-		this.crit = crit;
-		this.name = name;
+		this.dmg = DMG;
+		this.rng = RNG;
+		this.acc = ACC;
+		this.crit = CRIT;
+		this.name = NAME;
 	}
 	
+	// Methods
 	public int getDmg()
 	{
 		return dmg;
