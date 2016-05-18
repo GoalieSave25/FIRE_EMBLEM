@@ -24,17 +24,19 @@ public class Battle
 		if(randHit < hit)
 			return 0;
 		int damage = 0;
-		int crit = getCritChance(attack, defend, attack.getWeapon());
+		int crit = getCritChance(attack, defend);
 		int randCrit = (int) (Math.random() * 100 - 1);
 		int weaponDamage = attack.getWeapon().getDmg() + getWeaponTriangleDamage(attack.getWeapon(),  defend.getWeapon());
 		damage = attack.getStrength() + weaponDamage - defend.getDefense();
+		if(damage < 0)
+			damage = 0;
 		if(randCrit < crit)
 			damage *= 3;		
 		return damage;
 	}
-	public int getCritChance(Unit atk, Unit def, Weapon weapon)
+	public int getCritChance(Unit atk, Unit def)
 	{
-		int critChance = (int) (atk.getLuck() + weapon.getCrit() - def.getLuck());
+		int critChance = (int) (atk.getLuck() - def.getDefLuck());
 		if(critChance < 0)
 			critChance = 0;
 		return critChance;

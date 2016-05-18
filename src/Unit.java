@@ -18,4 +18,8 @@ public class Unit extends stats
 	{
 		return super.getLuck() + (int) weapon.getCrit();
 	}
+	public int getDefLuck()
+	{
+		return super.getLuck();
+	}
 }
