@@ -17,17 +17,23 @@ public class Battle
 	}
 	public int getDamage()
 	{	
-		int hit = (int) (attack.getSkill() + getWeaponTriangleHit(attack.getWeapon(), defend.getWeapon()) - (defend.getSpeed() + defend.getLuck()));
-		if(hit > 100)
-			hit = 100;
-		int randHit = (int) (Math.random() * 100 - 1);
-		if(randHit < hit)
+		int totHit = 0;
+		int hit = (int) (attack.getSkill() * 2 + getWeaponTriangleHit(attack.getWeapon(), defend.getWeapon()) + attack.getLuck());
+		int evade = defend.getSpeed() * 2 + defend.getDefLuck();
+		totHit = hit - evade;
+		if(totHit > 100)
+			totHit = 100;
+		int randHit = (int) (Math.random() * 99);
+		if(randHit < totHit)
 			return 0;
 		int damage = 0;
 		int crit = getCritChance(attack, defend);
-		int randCrit = (int) (Math.random() * 100 - 1);
+		int randCrit = (int) (Math.random() * 99);
 		int weaponDamage = attack.getWeapon().getDmg() + getWeaponTriangleDamage(attack.getWeapon(),  defend.getWeapon());
-		damage = attack.getStrength() + weaponDamage - defend.getDefense();
+		if(!attack.getWeapon().getName().contains("thunder"))
+			damage = attack.getStrength() + weaponDamage - defend.getDefense();
+		else
+			damage = attack.getMagic() + weaponDamage - defend.getResistance();
 		if(damage < 0)
 			damage = 0;
 		if(randCrit < crit)
@@ -43,30 +49,34 @@ public class Battle
 	}
 	public double getWeaponTriangleHit(Weapon offense, Weapon defense)
 	{
-		if(offense.getName().contains("Sword") && defense.getName().contains("Lance"))
+		if((offense.getName().contains("thunder") || offense.getName().contains("Sword")) && (defense.getName().contains("Lance") || defense.getName().contains("Dagger")))
 			return offense.getAcc() - offense.getAcc() * .1;
-		else if(offense.getName().contains("Lance") && defense.getName().contains("Axe"))
+		else if((offense.getName().contains("Lance") || offense.getName().contains("Dagger")) && (defense.getName().contains("Axe") || defense.getName().contains("Bow")))
 			return offense.getAcc() - offense.getAcc() * .1;
-		else if(offense.getName().contains("Axe") && defense.getName().contains("Sword"))
+		else if((offense.getName().contains("Axe") || offense.getName().contains("Bow")) && (defense.getName().contains("thunder") || defense.getName().contains("Sword")))
 			return offense.getAcc() - offense.getAcc() * .1;
-		else if(offense.getName().contains("Bow") || defense.getName().contains("Bow"))
-			return offense.getAcc();
-		else if(offense.getName().contains("Tome") || defense.getName().contains("Tome"))
-			return offense.getAcc();
+		else if((offense.getName().contains("Axe") || offense.getName().contains("Bow")) && (defense.getName().contains("Axe") || defense.getName().contains("Bow")))
+			return offense.getAcc();	
+		else if((offense.getName().contains("thunder") || offense.getName().contains("Sword")) && (defense.getName().contains("thunder") || defense.getName().contains("Sword")))
+			return offense.getAcc();	
+		else if((offense.getName().contains("Lance") || offense.getName().contains("Dagger")) && (defense.getName().contains("Lance") || defense.getName().contains("Dagger")))
+			return offense.getAcc();	
 		return offense.getAcc() + offense.getAcc() * .1;
 	}
 	public int getWeaponTriangleDamage(Weapon offense, Weapon defense)
 	{
-		if(offense.getName().contains("Sword") && defense.getName().contains("Lance"))
+		if((offense.getName().contains("thunder") || offense.getName().contains("Sword")) && (defense.getName().contains("Lance") || defense.getName().contains("Dagger")))
 			return offense.getDmg() - 1;
-		else if(offense.getName().contains("Lance") && defense.getName().contains("Axe"))
+		else if((offense.getName().contains("Lance") || offense.getName().contains("Dagger")) && (defense.getName().contains("Axe") || defense.getName().contains("Bow")))
 			return offense.getDmg() - 1;
-		else if(offense.getName().contains("Axe") && defense.getName().contains("Sword"))
+		else if((offense.getName().contains("Axe") || offense.getName().contains("Bow")) && (defense.getName().contains("thunder") || defense.getName().contains("Sword")))
 			return offense.getDmg() - 1;
-		else if(offense.getName().contains("Bow") || defense.getName().contains("Bow"))
-			return offense.getDmg();
-		else if(offense.getName().contains("Tome") || defense.getName().contains("Tome"))
-			return offense.getDmg();
+		else if((offense.getName().contains("Axe") || offense.getName().contains("Bow")) && (defense.getName().contains("Axe") || defense.getName().contains("Bow")))
+			return offense.getDmg();	
+		else if((offense.getName().contains("thunder") || offense.getName().contains("Sword")) && (defense.getName().contains("thunder") || defense.getName().contains("Sword")))
+			return offense.getDmg();	
+		else if((offense.getName().contains("Lance") || offense.getName().contains("Dagger")) && (defense.getName().contains("Lance") || defense.getName().contains("Dagger")))
+			return offense.getDmg();	
 		return offense.getDmg() + 1;
 	}
 }
