@@ -1,10 +1,10 @@
+import javax.swing.ImageIcon;
 
 public class Unit extends stats
 {
 	Weapon weapon;
-	int image;
 	
-	public Unit (int HP, int STRENGTH, int MAGIC, int SKILL, int SPEED, int LUCK, int DEFENSE, int RESISTANCE, int MOVEMENT, Weapon weapon, int image)
+	public Unit (int HP, int STRENGTH, int MAGIC, int SKILL, int SPEED, int LUCK, int DEFENSE, int RESISTANCE, int MOVEMENT, Weapon weapon, ImageIcon sprite)
     {
 		super(HP, STRENGTH, MAGIC, SKILL, SPEED, LUCK, DEFENSE, RESISTANCE, MOVEMENT);
     }
@@ -19,9 +19,5 @@ public class Unit extends stats
 	public int getLuck()
 	{
 		return super.getLuck() + (int) weapon.getCrit();
-	}
-	public int getImageNumber()
-	{
-		return image;
 	}
 }
