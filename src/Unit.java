@@ -2,7 +2,9 @@
 public class Unit extends stats
 {
 	Weapon weapon;
-	public Unit (int HP, int STRENGTH, int MAGIC, int SKILL, int SPEED, int LUCK, int DEFENSE, int RESISTANCE, int MOVEMENT, Weapon weapon)
+	int image;
+	
+	public Unit (int HP, int STRENGTH, int MAGIC, int SKILL, int SPEED, int LUCK, int DEFENSE, int RESISTANCE, int MOVEMENT, Weapon weapon, int image)
     {
 		super(HP, STRENGTH, MAGIC, SKILL, SPEED, LUCK, DEFENSE, RESISTANCE, MOVEMENT);
     }
@@ -18,8 +20,8 @@ public class Unit extends stats
 	{
 		return super.getLuck() + (int) weapon.getCrit();
 	}
-	public int getDefLuck()
+	public int getImageNumber()
 	{
-		return super.getLuck();
+		return image;
 	}
 }
