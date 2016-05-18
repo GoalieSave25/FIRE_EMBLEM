@@ -7,42 +7,27 @@ public class Battle
 		this.attack = attack;
 		this.defend = defend;
 	}
-	public void battle()
-	{
-		attack();
-		if(attack.getWeapon().getRng() == defend.getWeapon().getRng())
-		{
-			counterAttack();
-		}
-		if(attack.getSpeed() >= defend.getSpeed() + 5)
-		{
-			attack();
-		}
-	}
 	public void attack()
 	{
-		defend.looseHP(getDamage(attack, defend));
+		
 	}
 	public void counterAttack()
 	{
-		attack.looseHP(getDamage(defend, attack));
+		
 	}
-	public int getDamage(Unit attacker, Unit defender)
+	public int getDamage()
 	{	
-		int hit = (int) (attacker.getSkill() + getWeaponTriangleHit(attacker.getWeapon(), defender.getWeapon()) - (defender.getSpeed() + defender.getLuck()));
+		int hit = (int) (attack.getSkill() + getWeaponTriangleHit(attack.getWeapon(), defend.getWeapon()) - (defend.getSpeed() + defend.getLuck()));
 		if(hit > 100)
 			hit = 100;
 		int randHit = (int) (Math.random() * 100 - 1);
 		if(randHit < hit)
 			return 0;
 		int damage = 0;
-		int crit = getCritChance(attacker, defender, attacker.getWeapon());
+		int crit = getCritChance(attack, defend, attack.getWeapon());
 		int randCrit = (int) (Math.random() * 100 - 1);
-		int weaponDamage = attacker.getWeapon().getDmg() + getWeaponTriangleDamage(attacker.getWeapon(),  defender.getWeapon());
-		if(!attack.getWeapon().getName().contains("thunder"))
-			damage = attacker.getStrength() + weaponDamage - defender.getDefense();
-		else
-			damage = attacker.getMagic() + weaponDamage - defender.getResistance();
+		int weaponDamage = attack.getWeapon().getDmg() + getWeaponTriangleDamage(attack.getWeapon(),  defend.getWeapon());
+		damage = attack.getStrength() + weaponDamage - defend.getDefense();
 		if(randCrit < crit)
 			damage *= 3;		
 		return damage;
@@ -83,6 +68,7 @@ public class Battle
 		return offense.getDmg() + 1;
 	}
 }
+
 /*
  * system("pause");
  * return 0;
