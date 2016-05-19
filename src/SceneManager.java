@@ -1,6 +1,4 @@
 
-public class SceneManager 
-{
 //	import solenus.gridemblem3.scene.topmenuscene.TopMenuScene;
 //	import solenus.gridemblem3.scene.dialoguescene.DialogueScene;
 //	import solenus.gridemblem3.scene.hqscene.HQScene;
@@ -360,5 +358,3 @@ public class SceneManager
 	    }
 	    
 	}
-
-}

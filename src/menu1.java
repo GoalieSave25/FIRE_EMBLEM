@@ -63,7 +63,7 @@ public class menu1 extends JFrame {
 		btnQuickStart.setFont(new Font("Papyrus", Font.PLAIN, 32));
 		btnQuickStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new menu2();
+				//new menu2();
 				contentPane.removeAll();
 			}
 		});

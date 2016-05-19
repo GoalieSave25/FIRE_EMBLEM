@@ -1,9 +1,7 @@
 
-public class Scene 
-{
 	import java.awt.Graphics2D;
-	import solenus.gridemblem3.GridEmblemMk3;
-	import solenus.gridemblem3.InputManager;
+	//import solenus.gridemblem3.GridEmblemMk3;
+	//import solenus.gridemblem3.InputManager;
 
 	/**
 	 * Base class for all scenes
@@ -44,8 +42,8 @@ public class Scene
 	     */
 	    public Scene()
 	    {
-	        width = GridEmblemMk3.WIDTH;
-	        height = GridEmblemMk3.HEIGHT;
+	        width = 200;//GridEmblemMk3.WIDTH;
+	        height = 200;//GridEmblemMk3.HEIGHT;
 	        
 	        xLoc = 0;
 	        yLoc = 0;
@@ -113,8 +111,8 @@ public class Scene
 	     */
 	    public void resize()
 	    {
-	        width = GridEmblemMk3.WIDTH;
-	        height = GridEmblemMk3.HEIGHT;
+	        width = 200;//GridEmblemMk3.WIDTH;
+	        height = 200;//GridEmblemMk3.HEIGHT;
 	    }
 
 	    //<editor-fold desc="on/off control">
@@ -174,4 +172,3 @@ public class Scene
 	    //</editor-fold>
 
 	}
-}
