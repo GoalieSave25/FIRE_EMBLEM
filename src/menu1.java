@@ -65,6 +65,8 @@ public class menu1 extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				//new menu2();
 				contentPane.removeAll();
+				contentPane.setVisible(false);
+				dispose();
 			}
 		});
 		btnQuickStart.setBounds(74, 155, 229, 129);
@@ -146,7 +148,7 @@ public class menu1 extends JFrame {
 		contentPane.add(btnHowPlay);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(38, 47, 745, 389);
+		lblNewLabel.setBounds(38, 55, 745, 389);
 		lblNewLabel.setIcon(new ImageIcon("fe.jpg"));
 		contentPane.add(lblNewLabel);
 	}
