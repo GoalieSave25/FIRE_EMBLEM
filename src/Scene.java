@@ -1,4 +1,3 @@
-
 	import java.awt.Graphics2D;
 	//import solenus.gridemblem3.GridEmblemMk3;
 	//import solenus.gridemblem3.InputManager;
@@ -168,7 +167,4 @@
 	    {
 	        return controlState;
 	    }
-
-	    //</editor-fold>
-
 	}
