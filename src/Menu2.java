@@ -181,7 +181,7 @@ public class Menu2 extends JFrame {
 			public void actionPerformed(ActionEvent arg0) 
 			{
 				dispose();
-				new Menu1().setVisible(true);
+				new menu1().setVisible(true);
 			}
 		});
 		btnBack.setBounds(50, 382, 187, 23);
