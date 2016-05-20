@@ -11,6 +11,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class Menu2 extends JFrame {
 
@@ -36,23 +37,26 @@ public class Menu2 extends JFrame {
 	 * Create the frame.
 	 */
 	public Menu2() {
+		setBackground(new Color(255, 255, 255));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 641, 466);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(233, 150, 122));
+		contentPane.setForeground(new Color(248, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Custom Start");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 43));
-		lblNewLabel.setBounds(174, 11, 277, 47);
+		lblNewLabel.setFont(new Font("Papyrus", Font.BOLD, 43));
+		lblNewLabel.setBounds(153, 11, 318, 47);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblChooseACharacter = new JLabel("Choose a character to start the game.");
-		lblChooseACharacter.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		lblChooseACharacter.setFont(new Font("Papyrus", Font.BOLD, 12));
 		lblChooseACharacter.setHorizontalAlignment(SwingConstants.CENTER);
-		lblChooseACharacter.setBounds(191, 64, 243, 14);
+		lblChooseACharacter.setBounds(181, 64, 263, 26);
 		contentPane.add(lblChooseACharacter);
 		
 		JButton myrmidon = new JButton(new ImageIcon("1.gif"));
@@ -88,55 +92,55 @@ public class Menu2 extends JFrame {
 		contentPane.add(archer);
 		
 		JLabel lblmyrmidon = new JLabel("Myrmidon");
-		lblmyrmidon.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		lblmyrmidon.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		lblmyrmidon.setHorizontalAlignment(SwingConstants.CENTER);
 		lblmyrmidon.setBounds(50, 188, 97, 23);
 		contentPane.add(lblmyrmidon);
 		
 		JLabel lblmage = new JLabel("Mage");
-		lblmage.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		lblmage.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		lblmage.setHorizontalAlignment(SwingConstants.CENTER);
 		lblmage.setBounds(194, 188, 97, 23);
 		contentPane.add(lblmage);
 		
 		JLabel lblKnight = new JLabel("Knight");
-		lblKnight.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		lblKnight.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		lblKnight.setHorizontalAlignment(SwingConstants.CENTER);
 		lblKnight.setBounds(50, 330, 97, 23);
 		contentPane.add(lblKnight);
 		
 		JLabel lblFighter = new JLabel("Fighter");
-		lblFighter.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		lblFighter.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		lblFighter.setHorizontalAlignment(SwingConstants.CENTER);
 		lblFighter.setBounds(194, 330, 97, 23);
 		contentPane.add(lblFighter);
 		
 		JLabel lblMercenary = new JLabel("Mercenary");
-		lblMercenary.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		lblMercenary.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		lblMercenary.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMercenary.setBounds(338, 330, 97, 23);
 		contentPane.add(lblMercenary);
 		
 		JLabel lblThief = new JLabel("Thief");
-		lblThief.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		lblThief.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		lblThief.setHorizontalAlignment(SwingConstants.CENTER);
 		lblThief.setBounds(338, 188, 97, 23);
 		contentPane.add(lblThief);
 		
 		JLabel lblCavalier = new JLabel("Cavalier");
-		lblCavalier.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		lblCavalier.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		lblCavalier.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCavalier.setBounds(482, 188, 97, 23);
 		contentPane.add(lblCavalier);
 		
 		JLabel lblArcher = new JLabel("Archer");
-		lblArcher.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		lblArcher.setFont(new Font("Papyrus", Font.PLAIN, 12));
 		lblArcher.setHorizontalAlignment(SwingConstants.CENTER);
 		lblArcher.setBounds(482, 330, 97, 23);
 		contentPane.add(lblArcher);
 		
 		JButton btnBack = new JButton("Return to Main Menu");
-		btnBack.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		btnBack.setFont(new Font("Papyrus", Font.PLAIN, 14));
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
