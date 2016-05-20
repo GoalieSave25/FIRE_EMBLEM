@@ -57,10 +57,11 @@ public class menu1 extends JFrame {
 		lblFireEmblem.setBounds(5, 5, 709, 139);
 		lblFireEmblem.setFont(new Font("Comic Sans MS", Font.PLAIN, 99));
 		lblFireEmblem.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFireEmblem.setVerticalAlignment(SwingConstants.TOP);
 		contentPane.add(lblFireEmblem);
 		
 		JButton btnQuickStart = new JButton("Quick Start");
-		btnQuickStart.setFont(new Font("Papyrus", Font.PLAIN, 32));
+		btnQuickStart.setFont(new Font("Papyrus", Font.PLAIN, 20));
 		btnQuickStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				contentPane.removeAll();
@@ -78,34 +79,22 @@ public class menu1 extends JFrame {
 				});
 			}
 		});
-		btnQuickStart.setBounds(74, 155, 229, 129);
+		btnQuickStart.setBounds(40, 155, 150,100);
 		contentPane.add(btnQuickStart);
 		
-		JButton btnCustomStart = new JButton("Custom Start");
-		btnCustomStart.setFont(new Font("Times New Roman", Font.PLAIN, 8));
+		JButton btnCustomStart = new JButton("Custom");
+		btnCustomStart.setFont(new Font("Papyrus", Font.PLAIN, 20));
 		btnCustomStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnCustomStart.setBounds(381, 155, 229, 129);
+		btnCustomStart.setBounds(40, 270, 150,100);
 		contentPane.add(btnCustomStart);
 		
-		JButton btnGoogle = new JButton("Google");
-		btnGoogle.setFont(new Font("Georgia", Font.PLAIN, 32));
-		btnGoogle.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				try {
-					openWebpage(new URL("https://www.google.com/search?q=fire%20emblem&rct=j"));
-				} catch (MalformedURLException e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		btnGoogle.setBounds(28, 295, 146, 92);
-		contentPane.add(btnGoogle);
+		
 		
 		JButton btnEmulator = new JButton("Emulator");
-		btnEmulator.setFont(new Font("Cooper Std Black", Font.PLAIN, 10));
+		btnEmulator.setFont(new Font("Papyrus", Font.PLAIN, 20));
 		btnEmulator.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
@@ -115,35 +104,23 @@ public class menu1 extends JFrame {
 				}
 			}
 		});
-		btnEmulator.setBounds(225, 295, 113, 45);
+		btnEmulator.setBounds(530, 155, 150,100);
 		contentPane.add(btnEmulator);
 		
-		JButton btnAdblock = new JButton("AdBlock");
-		btnAdblock.setFont(new Font("KaiTi", Font.PLAIN, 10));
-		btnAdblock.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				try {
-					openWebpage(new URL("https://adblockplus.org/"));
-				} catch (MalformedURLException e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		btnAdblock.setBounds(306, 342, 113, 45);
-		contentPane.add(btnAdblock);
 		
-		JButton btnRagenquit = new JButton("RAGE QUIT");
-		btnRagenquit.setFont(new Font("Matura MT Script Capitals", Font.PLAIN, 22));
+		
+		JButton btnRagenquit = new JButton("EXIT");
+		btnRagenquit.setFont(new Font("Papyrus", Font.PLAIN, 20));
 		btnRagenquit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
 			}
 		});
-		btnRagenquit.setBounds(488, 297, 226, 174);
+		btnRagenquit.setBounds(530, 270, 150,100);
 		contentPane.add(btnRagenquit);
 		
-		JButton btnHowPlay = new JButton("HOW 2 PLAY SKRUB");
-		btnHowPlay.setFont(new Font("Adobe Arabic", Font.PLAIN, 17));
+		JButton btnHowPlay = new JButton("HOW TO PLAY");
+		btnHowPlay.setFont(new Font("Papyrus", Font.PLAIN, 32));
 		btnHowPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
@@ -156,7 +133,7 @@ public class menu1 extends JFrame {
 				}
 			*/}
 		});
-		btnHowPlay.setBounds(46, 411, 362, 45);
+		btnHowPlay.setBounds(200, 425, 362, 45);
 		contentPane.add(btnHowPlay);
 		
 		JLabel lblNewLabel = new JLabel("");
