@@ -63,10 +63,19 @@ public class menu1 extends JFrame {
 		btnQuickStart.setFont(new Font("Papyrus", Font.PLAIN, 32));
 		btnQuickStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new Main();
 				contentPane.removeAll();
 				contentPane.setVisible(false);
 				dispose();
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Main frame = new Main();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 			}
 		});
 		btnQuickStart.setBounds(74, 155, 229, 129);
