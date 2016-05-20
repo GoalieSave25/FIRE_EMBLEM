@@ -55,7 +55,7 @@ public class menu1 extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblFireEmblem = new JLabel("FIRE EMBLEM");
-		lblFireEmblem.setBounds(5, 5, 709, 139);
+		lblFireEmblem.setBounds(0, 5, 709, 139);
 		lblFireEmblem.setFont(new Font("Comic Sans MS", Font.PLAIN, 99));
 		lblFireEmblem.setHorizontalAlignment(SwingConstants.CENTER);
 		lblFireEmblem.setVerticalAlignment(SwingConstants.TOP);
@@ -134,7 +134,7 @@ public class menu1 extends JFrame {
 		contentPane.add(btnHowPlay);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(38, 55, 745, 389);
+		lblNewLabel.setBounds(193, 155, 339, 218);
 		lblNewLabel.setIcon(new ImageIcon("fe.jpg"));
 		contentPane.add(lblNewLabel);
 	}
