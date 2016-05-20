@@ -146,12 +146,15 @@ public class menu1 extends JFrame {
 		btnHowPlay.setFont(new Font("Adobe Arabic", Font.PLAIN, 17));
 		btnHowPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				try {
+				dispose();
+				
+				new Menu3().setVisible(true);
+				/*try {
 					openWebpage(new URL("http://fireemblem.wikia.com/wiki/Fire_Emblem_Wiki:Basics"));
 				} catch (MalformedURLException e) {
 					e.printStackTrace();
 				}
-			}
+			*/}
 		});
 		btnHowPlay.setBounds(46, 411, 362, 45);
 		contentPane.add(btnHowPlay);
