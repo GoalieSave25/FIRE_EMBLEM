@@ -20,7 +20,7 @@ import java.net.URL;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 
-public class menu1 extends JFrame {
+public class Menu1 extends JFrame {
 
 	private JPanel contentPane;
 
@@ -31,10 +31,8 @@ public class menu1 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					menu1 frame = new menu1();
+					Menu1 frame = new Menu1();
 					frame.setVisible(true);
-					frame.setResizable(false);
-					frame.setTitle("Fire Emblem - Main Menu");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -45,23 +43,18 @@ public class menu1 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public menu1() {
+	public Menu1() {
+		setResizable(false);
+		setTitle("Fire Emblem - Main Menu");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 735, 520);
+		setBounds(100, 100, 835, 520);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 102, 102));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblFireEmblem = new JLabel("FIRE EMBLEM");
-		lblFireEmblem.setBounds(0, 5, 709, 139);
-		lblFireEmblem.setFont(new Font("Comic Sans MS", Font.PLAIN, 99));
-		lblFireEmblem.setHorizontalAlignment(SwingConstants.CENTER);
-		lblFireEmblem.setVerticalAlignment(SwingConstants.TOP);
-		contentPane.add(lblFireEmblem);
-		
 		JButton btnQuickStart = new JButton("Quick Start");
+		btnQuickStart.setBackground(new Color(210, 180, 140));
 		btnQuickStart.setFont(new Font("Papyrus", Font.PLAIN, 20));
 		btnQuickStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -82,10 +75,11 @@ public class menu1 extends JFrame {
 				});
 			}
 		});
-		btnQuickStart.setBounds(40, 155, 150,100);
+		btnQuickStart.setBounds(10, 259, 150,100);
 		contentPane.add(btnQuickStart);
 		
 		JButton btnCustomStart = new JButton("Custom");
+		btnCustomStart.setBackground(new Color(210, 180, 140));
 		btnCustomStart.setFont(new Font("Papyrus", Font.PLAIN, 20));
 		btnCustomStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
@@ -94,12 +88,11 @@ public class menu1 extends JFrame {
 				new Menu2().setVisible(true);
 			}
 		});
-		btnCustomStart.setBounds(40, 270, 150,100);
+		btnCustomStart.setBounds(10, 370, 150,100);
 		contentPane.add(btnCustomStart);
 		
-		
-		
 		JButton btnEmulator = new JButton("Emulator");
+		btnEmulator.setBackground(new Color(210, 180, 140));
 		btnEmulator.setFont(new Font("Papyrus", Font.PLAIN, 20));
 		btnEmulator.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -110,36 +103,36 @@ public class menu1 extends JFrame {
 				}
 			}
 		});
-		btnEmulator.setBounds(530, 155, 150,100);
+		btnEmulator.setBounds(659, 259, 150,100);
 		contentPane.add(btnEmulator);
 		
-		
-		
-		JButton btnRagenquit = new JButton("EXIT");
+		JButton btnRagenquit = new JButton("Exit");
+		btnRagenquit.setBackground(new Color(210, 180, 140));
 		btnRagenquit.setFont(new Font("Papyrus", Font.PLAIN, 20));
 		btnRagenquit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
 			}
 		});
-		btnRagenquit.setBounds(530, 270, 150,100);
+		btnRagenquit.setBounds(659, 370, 150,100);
 		contentPane.add(btnRagenquit);
 		
-		JButton btnHowPlay = new JButton("HOW TO PLAY");
-		btnHowPlay.setFont(new Font("Papyrus", Font.PLAIN, 32));
+		JButton btnHowPlay = new JButton("How to Play");
+		btnHowPlay.setBackground(new Color(210, 180, 140));
+		btnHowPlay.setFont(new Font("Papyrus", Font.PLAIN, 20));
 		btnHowPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 				new Menu3().setVisible(true);
 			}
 		});
-		btnHowPlay.setBounds(200, 425, 362, 45);
+		btnHowPlay.setBounds(195, 425, 429, 45);
 		contentPane.add(btnHowPlay);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(193, 155, 339, 218);
-		lblNewLabel.setIcon(new ImageIcon("fe.jpg"));
-		contentPane.add(lblNewLabel);
+		ImageLabel logo = new ImageLabel("logo.png", 50, 50, 735, 150);
+		contentPane.add(logo);
+		ImageLabel bg = new ImageLabel("Background.png", -1, -1, 835, 520);
+		contentPane.add(bg);
 	}
 	public static void openWebpage(java.net.URI uri) {
 	    Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;

@@ -37,8 +37,8 @@ public class Menu2 extends JFrame {
 	 * Create the frame.
 	 */
 	public Menu2() {
+		setResizable(false);
 		setTitle("Character Select");
-		setBackground(new Color(255, 255, 255));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 641, 466);
 		contentPane = new JPanel();

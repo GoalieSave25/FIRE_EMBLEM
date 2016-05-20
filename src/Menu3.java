@@ -37,11 +37,14 @@ public class Menu3 extends JFrame {
 	 * Create the frame.
 	 */
 	public Menu3() {
+		setTitle("Help");
+		setResizable(false);
 		setForeground(Color.LIGHT_GRAY);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 486, 257);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(250, 128, 114));
+		contentPane.setBackground(new Color(255, 218, 185));
+		contentPane.setForeground(new Color(248, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -53,15 +56,13 @@ public class Menu3 extends JFrame {
 		contentPane.add(instructionsLabel);
 		
 		JButton backButton = new JButton("Back to Main Menu");
+		backButton.setBackground(new Color(210, 180, 140));
 		backButton.setFont(new Font("Papyrus", Font.BOLD, 12));
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
-			
 				dispose();
-				
 				new Menu1().setVisible(true);
-			
 			}
 		});
 		backButton.setBounds(143, 133, 193, 53);
