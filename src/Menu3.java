@@ -60,7 +60,7 @@ public class Menu3 extends JFrame {
 			
 				dispose();
 				
-				new menu1().setVisible(true);
+				new Menu1().setVisible(true);
 			
 			}
 		});

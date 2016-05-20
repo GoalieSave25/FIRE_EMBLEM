@@ -37,6 +37,7 @@ public class Menu2 extends JFrame {
 	 * Create the frame.
 	 */
 	public Menu2() {
+		setTitle("Character Select");
 		setBackground(new Color(255, 255, 255));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 641, 466);
@@ -180,7 +181,7 @@ public class Menu2 extends JFrame {
 			public void actionPerformed(ActionEvent arg0) 
 			{
 				dispose();
-				new menu1().setVisible(true);
+				new Menu1().setVisible(true);
 			}
 		});
 		btnBack.setBounds(50, 382, 187, 23);
