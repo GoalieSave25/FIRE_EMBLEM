@@ -41,16 +41,19 @@ public class Menu3 extends JFrame {
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 486, 257);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(250, 128, 114));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel instructionsLabel = new JLabel("Select the character you want to move. They can move anywhere in the blue ");
+		instructionsLabel.setFont(new Font("Papyrus", Font.PLAIN, 13));
 		instructionsLabel.setVerticalAlignment(SwingConstants.TOP);
 		instructionsLabel.setBounds(17, 75, 443, 28);
 		contentPane.add(instructionsLabel);
 		
 		JButton backButton = new JButton("Back to Main Menu");
+		backButton.setFont(new Font("Papyrus", Font.BOLD, 12));
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
@@ -66,11 +69,12 @@ public class Menu3 extends JFrame {
 		
 		JLabel lblHelp = new JLabel("Help");
 		lblHelp.setHorizontalAlignment(SwingConstants.CENTER);
-		lblHelp.setFont(new Font("Comic Sans MS", Font.PLAIN, 49));
+		lblHelp.setFont(new Font("Papyrus", Font.PLAIN, 49));
 		lblHelp.setBounds(166, 11, 146, 53);
 		contentPane.add(lblHelp);
 		
 		JLabel lblNewLabel = new JLabel(" shaded area.  When in range of an enemy, select them to attack.");
+		lblNewLabel.setFont(new Font("Papyrus", Font.PLAIN, 13));
 		lblNewLabel.setBounds(17, 90, 402, 28);
 		contentPane.add(lblNewLabel);
 	}
