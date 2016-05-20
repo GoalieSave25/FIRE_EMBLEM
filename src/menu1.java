@@ -34,6 +34,7 @@ public class menu1 extends JFrame {
 					menu1 frame = new menu1();
 					frame.setVisible(true);
 					frame.setResizable(false);
+					frame.setTitle("Fire Emblem - Main Menu");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -72,6 +73,8 @@ public class menu1 extends JFrame {
 						try {
 							Main frame = new Main();
 							frame.setVisible(true);
+							frame.setResizable(false);
+							frame.setTitle("GIF Viewer");
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -124,14 +127,8 @@ public class menu1 extends JFrame {
 		btnHowPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				
 				new Menu3().setVisible(true);
-				/*try {
-					openWebpage(new URL("http://fireemblem.wikia.com/wiki/Fire_Emblem_Wiki:Basics"));
-				} catch (MalformedURLException e) {
-					e.printStackTrace();
-				}
-			*/}
+			}
 		});
 		btnHowPlay.setBounds(200, 425, 362, 45);
 		contentPane.add(btnHowPlay);

@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Image;
 
@@ -9,18 +10,14 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 
 public class Main extends JFrame {
-	/**
-	 * Create the frame.
-	 */
 	public Main() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 700);
+		setContentPane(getContentPane());
+		getContentPane().setLayout(null);
 		
-		Image img = new ImageIcon("Chara GIFs/2.gif").getImage();
-		img = img.getScaledInstance(70, 70, 0);
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(img));
+		ImageLabel label = new ImageLabel("2.gif");
 		getContentPane().add(label);
+		label.setImageSize(700, 700);
 	}
-
 }
