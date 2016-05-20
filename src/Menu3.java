@@ -39,15 +39,15 @@ public class Menu3 extends JFrame {
 	public Menu3() {
 		setForeground(Color.LIGHT_GRAY);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		setBounds(100, 100, 557, 257);
+		setBounds(100, 100, 486, 257);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel instructionsLabel = new JLabel("Select the character you want to move. They can move anywhere in the blue shaded \r");
+		JLabel instructionsLabel = new JLabel("Select the character you want to move. They can move anywhere in the blue ");
 		instructionsLabel.setVerticalAlignment(SwingConstants.TOP);
-		instructionsLabel.setBounds(17, 75, 492, 28);
+		instructionsLabel.setBounds(17, 75, 443, 28);
 		contentPane.add(instructionsLabel);
 		
 		JButton backButton = new JButton("Back to Main Menu");
@@ -70,7 +70,7 @@ public class Menu3 extends JFrame {
 		lblHelp.setBounds(166, 11, 146, 53);
 		contentPane.add(lblHelp);
 		
-		JLabel lblNewLabel = new JLabel("area.  When in range of an enemy, select them to attack.");
+		JLabel lblNewLabel = new JLabel(" shaded area.  When in range of an enemy, select them to attack.");
 		lblNewLabel.setBounds(17, 90, 402, 28);
 		contentPane.add(lblNewLabel);
 	}
