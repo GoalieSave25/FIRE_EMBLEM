@@ -88,7 +88,10 @@ public class menu1 extends JFrame {
 		JButton btnCustomStart = new JButton("Custom");
 		btnCustomStart.setFont(new Font("Papyrus", Font.PLAIN, 20));
 		btnCustomStart.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				dispose();
+				new Menu2().setVisible(true);
 			}
 		});
 		btnCustomStart.setBounds(40, 270, 150,100);
