@@ -15,7 +15,7 @@ public class Characters
     	//mage
     	squad [1] = new Unit(35, 17, 22, 20, 23, 19, 16, 24, 5, new Weapon(8, 2, 75, 0, "Elthunder"), new ImageIcon("Chara GIFs/2.gif"));
     	//thief
-    	squad [2] = new Unit(35, 17, 15, 21, 20, 24, 22, 21, 5, new Weapon(7, 2, 85, 0, "Steel Dagger"), new ImageIcon("Chara GIFs/3.gif"));
+    	squad [2] = new Unit(35, 19, 18, 20, 24, 18, 17, 22, 5, new Weapon(7, 2, 85, 0, "Steel Dagger"), new ImageIcon("Chara GIFs/3.gif"));
     	//cavalier
 		squad [3] = new Unit(40, 22, 15, 21, 20, 24, 22, 21, 7, new Weapon(10, 1, 75, 0, "Steel Lance"), new ImageIcon("Chara GIFs/4.gif"));
 		//knight
