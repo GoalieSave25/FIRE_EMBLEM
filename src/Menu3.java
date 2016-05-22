@@ -8,46 +8,32 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.Toolkit;
+
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.Dimension;
 
 public class Menu3 extends JFrame {
-
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Menu3 frame = new Menu3();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public Menu3() {
 		setTitle("Help");
 		setResizable(false);
 		setForeground(Color.LIGHT_GRAY);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		setBounds(100, 100, 486, 257);
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		double width = screenSize.getWidth();
+		double height = screenSize.getHeight();
+		setBounds((int)(width/2-486/2), (int)(height/2-257/2), 486, 257);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 218, 185));
 		contentPane.setForeground(new Color(248, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setVisible(true);
 		
 		JLabel instructionsLabel = new JLabel("Select the character you want to move. They can move anywhere in the blue ");
 		instructionsLabel.setFont(new Font("Papyrus", Font.PLAIN, 13));
@@ -56,13 +42,13 @@ public class Menu3 extends JFrame {
 		contentPane.add(instructionsLabel);
 		
 		JButton backButton = new JButton("Back to Main Menu");
+		backButton.setFocusPainted(false);
 		backButton.setBackground(new Color(210, 180, 140));
 		backButton.setFont(new Font("Papyrus", Font.BOLD, 12));
 		backButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) 
-			{
+			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new Menu1().setVisible(true);
+				new Menu1();
 			}
 		});
 		backButton.setBounds(143, 133, 193, 53);

@@ -8,45 +8,31 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.Toolkit;
+
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.Dimension;
 
 public class Menu2 extends JFrame {
-
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Menu2 frame = new Menu2();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public Menu2() {
 		setResizable(false);
 		setTitle("Character Select");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 641, 466);
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		double width = screenSize.getWidth();
+		double height = screenSize.getHeight();
+		setBounds((int)(width/2-641/2), (int)(height/2-466/2), 641, 466);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 218, 185));
 		contentPane.setForeground(new Color(248, 248, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setVisible(true);
 		
 		JLabel lblNewLabel = new JLabel("Custom Start");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -61,6 +47,7 @@ public class Menu2 extends JFrame {
 		contentPane.add(lblChooseACharacter);
 		
 		JButton myrmidon = new JButton(new ImageIcon("1.gif"));
+		myrmidon.setFocusPainted(false);
 		myrmidon.setBackground(new Color(210, 180, 140));
 		myrmidon.setBounds(50, 101, 97, 87);
 		/*myrmidon.addActionListener(new ActionListener() 
@@ -92,36 +79,43 @@ public class Menu2 extends JFrame {
 		contentPane.add(myrmidon);
 		
 		JButton mage = new JButton(new ImageIcon("2.gif"));
+		mage.setFocusPainted(false);
 		mage.setBackground(new Color(210, 180, 140));
 		mage.setBounds(194, 101, 97, 87);
 		contentPane.add(mage);
 		
 		JButton thief = new JButton(new ImageIcon("3.gif"));
+		thief.setFocusPainted(false);
 		thief.setBackground(new Color(210, 180, 140));
 		thief.setBounds(338, 101, 97, 87);
 		contentPane.add(thief);
 		
 		JButton cavalier = new JButton(new ImageIcon("4.gif"));
+		cavalier.setFocusPainted(false);
 		cavalier.setBackground(new Color(210, 180, 140));
 		cavalier.setBounds(482, 101, 97, 87);
 		contentPane.add(cavalier);
 		
 		JButton knight = new JButton(new ImageIcon("5.gif"));
+		knight.setFocusPainted(false);
 		knight.setBackground(new Color(210, 180, 140));
 		knight.setBounds(50, 242, 97, 87);
 		contentPane.add(knight);
 		
 		JButton fighter = new JButton(new ImageIcon("6.gif"));
+		fighter.setFocusPainted(false);
 		fighter.setBackground(new Color(210, 180, 140));
 		fighter.setBounds(194, 242, 97, 87);
 		contentPane.add(fighter);
 		
 		JButton mercenary = new JButton(new ImageIcon("7.gif"));
+		mercenary.setFocusPainted(false);
 		mercenary.setBackground(new Color(210, 180, 140));
 		mercenary.setBounds(338, 242, 97, 87);
 		contentPane.add(mercenary);
 		
 		JButton archer = new JButton(new ImageIcon("8.gif"));
+		archer.setFocusPainted(false);
 		archer.setBackground(new Color(210, 180, 140));
 		archer.setBounds(482, 242, 97, 87);
 		contentPane.add(archer);
@@ -175,16 +169,16 @@ public class Menu2 extends JFrame {
 		contentPane.add(lblArcher);
 		
 		JButton btnBack = new JButton("Return to Main Menu");
+		btnBack.setFocusPainted(false);
 		btnBack.setFont(new Font("Papyrus", Font.PLAIN, 14));
 		btnBack.setBackground(new Color(210, 180, 140));
 		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) 
-			{
+			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 				new Menu1().setVisible(true);
 			}
 		});
-		btnBack.setBounds(50, 382, 187, 23);
+		btnBack.setBounds(50, 382, 187, 33);
 		contentPane.add(btnBack);
 		
 	}
