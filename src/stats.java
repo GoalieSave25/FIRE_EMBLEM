@@ -1,4 +1,4 @@
-public class stats {
+public class Stats {
 	
 	// Private Field Declarations
 	private int HPMAX = 0;
@@ -13,7 +13,7 @@ public class stats {
 	private int MOVEMENT = 0;
 	
 	// Constructor
-	public stats(int HP, int STRENGTH, int MAGIC, int SKILL, int SPEED, int LUCK, int DEFENSE, int RESISTANCE, int MOVEMENT) {
+	public Stats(int HP, int STRENGTH, int MAGIC, int SKILL, int SPEED, int LUCK, int DEFENSE, int RESISTANCE, int MOVEMENT) {
 		this.HPMAX = HP;
 		this.HP = HP;
 		this.STRENGTH = STRENGTH;

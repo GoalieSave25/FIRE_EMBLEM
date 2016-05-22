@@ -31,7 +31,6 @@ public class Unit extends Stats
 	{
 		return super.getLuck() + (int) weapon.getCrit();
 	}
-	
 	public void setAttack(boolean a)
 	{
 		attack = a;

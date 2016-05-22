@@ -10,6 +10,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
@@ -32,6 +33,7 @@ public class Menu1 extends JFrame {
 		});
 	}
 	public Menu1() {
+		setIconImage(new ImageIcon("Chara GIFs/icon.jpg").getImage());
 		String[][] a = new String[10][20];
 		for(int x = 0; x < 10; x++) {
 			for(int y = 0; y < 20; y++) {
@@ -40,7 +42,7 @@ public class Menu1 extends JFrame {
 		}
 		for(int x = 0; x < 10; x++)
 			a[x][x] = "PERSON";
-		Grid grid = new Grid(a);
+		//Grid grid = new Grid(a);
 		setResizable(false);
 		setTitle("Fire Emblem - Main Menu");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

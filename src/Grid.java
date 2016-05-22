@@ -14,7 +14,7 @@ public class Grid {
 	JLabel2[][] grid;
 	JFrame frame;
 	JPanel display;
-		private class Listen implements MouseListener {
+		private class Listen {
 			public String kind;
 			public int x;
 			public int y;
@@ -32,7 +32,7 @@ public class Grid {
 				//chara = k;
 			}
 			
-			public void mouseClicked(MouseEvent e) 
+			/*public void mouseClicked(MouseEvent e) 
 			{
 				JLabel2 it = (JLabel2)e.getComponent();
 				if(it.getText().equals("PERSON") && moving() == null && attacking() == null && it.getUnit().getPerson() && !it.getUnit().getAlreadymov() && !it.getUnit().getAlreadyatt())
@@ -79,7 +79,7 @@ public class Grid {
 							{
 								grid[k][l].setText("");
 							}
-							else if(/*grid[k][l].getUnit().getPerson()&& !grid[k][l].getUnit().getAttack() && */Math.abs(k - it.getJX()) + Math.abs(it.getJY() - l) <= it.getUnit().getWeapon().getRng())
+							else if(//*grid[k][l].getUnit().getPerson()&& !grid[k][l].getUnit().getAttack() && //Math.abs(k - it.getJX()) + Math.abs(it.getJY() - l) <= it.getUnit().getWeapon().getRng())
 							{
 								grid[k][l].setText("attackable");
 							}
@@ -150,7 +150,7 @@ public class Grid {
 			{}	
 			public void mouseReleased(MouseEvent e) 
 			{}
-			
+			*/
 			private JLabel2 moving()
 			{
 				for(int k = 0; k < gridx; k++)
@@ -182,15 +182,15 @@ public class Grid {
 			
 		}
 		
-		class JLabel2 extends JLabel
+		class JLabel2
 		{
-			
 			private Unit[] has;
 			private int x;
 			private int y;
+			private String a;
 			public JLabel2(String a, Unit[] b, int z, int v)
 			{
-				super(a);
+				this.a = a;
 				has = b;
 				x = z;
 				y = v;
@@ -213,13 +213,16 @@ public class Grid {
 			{
 				return y;
 			}
+			public String getText() {
+				return a;
+			}
 		}
 		
 	public Grid(String[][] the) {
 		gridx = the.length;
 		gridy = the[0].length;
-		frame = new JFrame("test grid");
-		display = new JPanel(new GridLayout(gridx, gridy));
+		//frame = new JFrame("test grid");
+		//display = new JPanel(new GridLayout(gridx, gridy));
 		grid = new JLabel2[gridx][gridy];
 		for(int x = 0; x < gridx; x++)
 		{
@@ -229,14 +232,14 @@ public class Grid {
 					grid[x][y] = new JLabel2(the[x][y], new Unit[] {new Unit(10, 1, 1, 1, 1, 1, 1, 1, 5, new Weapon(1,5,5,5,"string"), null, true)}, x, y);
 				else
 					grid[x][y] = new JLabel2(the[x][y], new Unit[] {new Unit(0,0,0,0,0,0,0,0,0, new Weapon(0,0,0,0, "placeholder"), null, false)}, x, y);
-				grid[x][y].setBorder(BorderFactory.createMatteBorder(1, 5, 1, 1, Color.BLACK));
+				//grid[x][y].setBorder(BorderFactory.createMatteBorder(1, 5, 1, 1, Color.BLACK));
 				
-				grid[x][y].addMouseListener(new Listen(the[x][y], x, y, 5));
-				display.add(grid[x][y]);
+				//grid[x][y].addMouseListener(new Listen(the[x][y], x, y, 5));
+				//display.add(grid[x][y]);
 			}
 		}
-		frame.setContentPane(display);
-		frame.pack();
-		frame.setVisible(true);	
+		//frame.setContentPane(display);
+		//frame.pack();
+		//frame.setVisible(true);	
 	}	
 }
