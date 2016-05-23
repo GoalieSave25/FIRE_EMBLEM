@@ -19,7 +19,8 @@ import java.awt.Dimension;
 public class Menu3 extends JFrame {
 	private JPanel contentPane;
 	public Menu3() {
-		setTitle("Help");
+		setIconImage(new ImageIcon("icon.jpg").getImage());
+		setTitle("Fire Emblem - Help");
 		setResizable(false);
 		setForeground(Color.LIGHT_GRAY);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);

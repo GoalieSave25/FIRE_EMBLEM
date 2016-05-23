@@ -21,6 +21,7 @@ import java.awt.event.ActionEvent;
 public class Menu1 extends JFrame {
 	private JPanel contentPane;
 	public static void main(String[] args) {
+		new AudioPlayer("My_Heart.wav");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -33,7 +34,7 @@ public class Menu1 extends JFrame {
 		});
 	}
 	public Menu1() {
-		setIconImage(new ImageIcon("Chara GIFs/icon.jpg").getImage());
+		setIconImage(new ImageIcon("icon.jpg").getImage());
 		String[][] a = new String[10][20];
 		for(int x = 0; x < 10; x++) {
 			for(int y = 0; y < 20; y++) {
@@ -65,7 +66,7 @@ public class Menu1 extends JFrame {
 				contentPane.removeAll();
 				contentPane.setVisible(false);
 				dispose();
-				new Main();
+				new Main("1");
 			}
 		});
 		btnQuickStart.setBounds(10, 259, 150,100);
@@ -127,7 +128,7 @@ public class Menu1 extends JFrame {
 		
 		ImageLabel logo = new ImageLabel("logo.png", 50, 50, 735, 150);
 		contentPane.add(logo);
-		ImageLabel bg = new ImageLabel("Background.png", -1, -1, 835, 520);
+		ImageLabel bg = new ImageLabel("background.png", -1, -1, 835, 520);
 		contentPane.add(bg);
 	}
 	public static void openWebpage(java.net.URI uri) {

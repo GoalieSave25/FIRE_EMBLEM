@@ -19,8 +19,9 @@ import java.awt.Dimension;
 public class Menu2 extends JFrame {
 	private JPanel contentPane;
 	public Menu2() {
+		setIconImage(new ImageIcon("icon.jpg").getImage());
 		setResizable(false);
-		setTitle("Character Select");
+		setTitle("Fire Emblem - Character Select");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double width = screenSize.getWidth();
@@ -46,78 +47,100 @@ public class Menu2 extends JFrame {
 		lblChooseACharacter.setBounds(181, 64, 263, 26);
 		contentPane.add(lblChooseACharacter);
 		
-		JButton myrmidon = new JButton(new ImageIcon("1.gif"));
+		JButton myrmidon = new JButton(new ImageIcon("Chara GIFs/1.gif"));
 		myrmidon.setFocusPainted(false);
 		myrmidon.setBackground(new Color(210, 180, 140));
 		myrmidon.setBounds(50, 101, 97, 87);
-		/*myrmidon.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent arg0) 
-			{
-				contentPane.removeAll();
-				contentPane.setVisible(false);
+		myrmidon.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				EventQueue.invokeLater(new Runnable() 
-				{
-					public void run() 
-					{
-						try 
-						{
-							Main frame = new Main();
-							frame.setVisible(true);
-							frame.setResizable(false);
-							frame.setTitle("GIF Viewer");
-						} 
-						catch (Exception e) 
-						{
-							e.printStackTrace();
-						}
-					}
-				});
+				new Main("1");
 			}
-		});*/
+		});
 		contentPane.add(myrmidon);
 		
-		JButton mage = new JButton(new ImageIcon("2.gif"));
+		JButton mage = new JButton(new ImageIcon("Chara GIFs/2.gif"));
 		mage.setFocusPainted(false);
 		mage.setBackground(new Color(210, 180, 140));
 		mage.setBounds(194, 101, 97, 87);
+		mage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new Main("2");
+			}
+		});
 		contentPane.add(mage);
 		
-		JButton thief = new JButton(new ImageIcon("3.gif"));
+		JButton thief = new JButton(new ImageIcon("Chara GIFs/3.gif"));
 		thief.setFocusPainted(false);
 		thief.setBackground(new Color(210, 180, 140));
 		thief.setBounds(338, 101, 97, 87);
+		thief.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new Main("3");
+			}
+		});
 		contentPane.add(thief);
 		
-		JButton cavalier = new JButton(new ImageIcon("4.gif"));
+		JButton cavalier = new JButton(new ImageIcon("Chara GIFs/4.gif"));
 		cavalier.setFocusPainted(false);
 		cavalier.setBackground(new Color(210, 180, 140));
 		cavalier.setBounds(482, 101, 97, 87);
+		cavalier.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new Main("4");
+			}
+		});
 		contentPane.add(cavalier);
 		
-		JButton knight = new JButton(new ImageIcon("5.gif"));
+		JButton knight = new JButton(new ImageIcon("Chara GIFs/5.gif"));
 		knight.setFocusPainted(false);
 		knight.setBackground(new Color(210, 180, 140));
 		knight.setBounds(50, 242, 97, 87);
+		knight.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new Main("5");
+			}
+		});
 		contentPane.add(knight);
 		
-		JButton fighter = new JButton(new ImageIcon("6.gif"));
+		JButton fighter = new JButton(new ImageIcon("Chara GIFs/6.gif"));
 		fighter.setFocusPainted(false);
 		fighter.setBackground(new Color(210, 180, 140));
 		fighter.setBounds(194, 242, 97, 87);
+		fighter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new Main("6");
+			}
+		});
 		contentPane.add(fighter);
 		
-		JButton mercenary = new JButton(new ImageIcon("7.gif"));
+		JButton mercenary = new JButton(new ImageIcon("Chara GIFs/7.gif"));
 		mercenary.setFocusPainted(false);
 		mercenary.setBackground(new Color(210, 180, 140));
 		mercenary.setBounds(338, 242, 97, 87);
+		mercenary.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new Main("7");
+			}
+		});
 		contentPane.add(mercenary);
 		
-		JButton archer = new JButton(new ImageIcon("8.gif"));
+		JButton archer = new JButton(new ImageIcon("Chara GIFs/8.gif"));
 		archer.setFocusPainted(false);
 		archer.setBackground(new Color(210, 180, 140));
 		archer.setBounds(482, 242, 97, 87);
+		archer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new Main("8");
+			}
+		});
 		contentPane.add(archer);
 		
 		JLabel lblmyrmidon = new JLabel("Myrmidon");

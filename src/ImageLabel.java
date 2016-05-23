@@ -13,7 +13,7 @@ public class ImageLabel extends JLabel {
 	public ImageLabel(String filepath) {
 		super();
 		path = filepath;
-		Image img = new ImageIcon("Chara GIFs/" + filepath).getImage();
+		Image img = new ImageIcon(filepath).getImage();
 		img = img.getScaledInstance(50, 50, 0);
 		super.setIcon(new ImageIcon(img));
 		super.setBounds(0, 0, 50, 50);
@@ -21,7 +21,7 @@ public class ImageLabel extends JLabel {
 	public ImageLabel(String filepath, int x, int y, int width, int height) {
 		super();
 		path = filepath;
-		Image img = new ImageIcon("Chara GIFs/" + filepath).getImage();
+		Image img = new ImageIcon(filepath).getImage();
 		img = img.getScaledInstance(width, height, 0);
 		super.setIcon(new ImageIcon(img));
 		super.setBounds(x, y, width, height);
@@ -31,7 +31,7 @@ public class ImageLabel extends JLabel {
 		this.height = height;
 	}
 	private void resetImage() {
-		Image img = new ImageIcon("Chara GIFs/" + path).getImage();
+		Image img = new ImageIcon(path).getImage();
 		img = img.getScaledInstance(width, height, 0);
 		super.setIcon(new ImageIcon(img));
 		super.setBounds(x, y, width, height);
