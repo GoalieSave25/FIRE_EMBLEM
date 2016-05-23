@@ -13,6 +13,7 @@ public class AudioPlayer {
 	        clip = AudioSystem.getClip();
 	        clip.open(inputStream);
 	        clip.start();
+	        clip.loop(Clip.LOOP_CONTINUOUSLY);
 	    } catch (Exception e) {
 	        stopPlay();
 	    }

@@ -2,6 +2,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -74,7 +75,7 @@ public class Main extends JFrame {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
-		setBounds((int)(width/2-1000/2), (int)(height/2-600/2), 1017, 612);
+		setBounds((int)(width/2-1000/2), (int)(height/2-600/2), 1017, 613);
 		setContentPane(l);
 		getContentPane().setLayout(null);
 		setResizable(false);
@@ -102,7 +103,7 @@ public class Main extends JFrame {
 		
 		for(int i = 0; i < 17; i++) {
 			for(int x = 0; x < 10; x++) {
-				CharacterIcon label = new CharacterIcon(name);
+				CharacterIcon label = new CharacterIcon(new Integer(rand(1, 12)).toString());
 				label.setGridLocation(i, x);
 				l.add(label, 0);
 				SpriteIcon red = new SpriteIcon("red.png");
@@ -120,5 +121,8 @@ public class Main extends JFrame {
 	}
 	private void redrawSelector() {
 		selector.setGridLocation(selectorx, selectory);
+	}
+	private static int rand(int min, int max) {
+		return (int)(Math.random() * 12 + 1);
 	}
 }
