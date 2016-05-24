@@ -1,9 +1,14 @@
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
+import java.awt.image.Raster;
 
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -237,13 +242,13 @@ public class FEGrid
 					}
 				}
 			if(turn && attacking() == null)
-				frame.setTitle("Test Grid - p1");
+				frame.setTitle("Fire Emblem - Player 1 Turn");
 			else if(turn)
-				frame.setTitle("Test Grid - p1, attacking");
+				frame.setTitle("Fire Emblem - Player 1 Attacking");
 			else if(!turn && attacking() == null)
-				frame.setTitle("Test Grid - p2");
+				frame.setTitle("Fire Emblem - Player 2 Turn");
 			else
-				frame.setTitle("Test Grid - p2, attacking");
+				frame.setTitle("Fire Emblem - Player 2 Attacking");
 			}
 
 			
@@ -372,7 +377,7 @@ public class FEGrid
 		
 	public FEGrid(Characters a, Characters b)
 	{
-		frame = new JFrame("Test Grid - p1");
+		frame = new JFrame("Fire Emblem - Player 1 Turn");
 		frame.setIconImage(new ImageIcon("icon.jpg").getImage());
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -434,4 +439,31 @@ public class FEGrid
 		frame.dispose();
 	}
 	
+	/*private ImageIcon tint(ImageIcon loadImgs, Color color) {
+		BufferedImage loadImg = (BufferedImage) loadImgs.getImage();
+		
+	    BufferedImage img = new BufferedImage(loadImg.getWidth(), loadImg.getHeight(),
+	            BufferedImage.TRANSLUCENT);
+	    final float tintOpacity = 0.45f;
+	    Graphics2D g2d = img.createGraphics(); 
+
+	    //Draw the base image
+	    g2d.drawImage(loadImg, null, 0, 0);
+	    //Set the color to a transparent version of the input color
+	    g2d.setColor(new Color(color.getRed() / 255f, color.getGreen() / 255f, 
+	        color.getBlue() / 255f, tintOpacity));
+
+	    //Iterate over every pixel, if it isn't transparent paint over it
+	    Raster data = loadImg.getData();
+	    for(int x = data.getMinX(); x < data.getWidth(); x++){
+	        for(int y = data.getMinY(); y < data.getHeight(); y++){
+	            int[] pixel = data.getPixel(x, y, new int[4]);
+	            if(pixel[3] > 0){ //If pixel isn't full alpha. Could also be pixel[3]==255
+	                g2d.fillRect(x, y, 1, 1);
+	            }
+	        }
+	    }
+	    g2d.dispose();
+	    return new ImageIcon(img);
+	}*/
 }
