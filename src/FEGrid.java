@@ -354,6 +354,10 @@ public class FEGrid
 			{
 				return ext;
 			}
+			
+			public void setIcon(ImageIcon icon) {
+				super.setIcon(new CharacterIcon(has[0].getPic()).getImg());
+			}
 		}
 		
 	public FEGrid(Characters a, Characters b)

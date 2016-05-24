@@ -14,6 +14,7 @@ public class CharacterIcon extends JLabel {
 	private double origheight = 20;
 	private int widthoffset = 0;
 	private int heightoffset = 0;
+	private ImageIcon img;
 	
 	public CharacterIcon(String name) {
 		super();
@@ -80,6 +81,7 @@ public class CharacterIcon extends JLabel {
 			heightoffset = 0;
 			widthoffset = (int) ((imageSize+0.6-width)/2);
 		}
+		this.img = new ImageIcon(img);
 		super.setIcon(new ImageIcon(img));
 		x = (int)((imageSize+0.6)*x)+widthoffset;
 		y = (int)((imageSize-0.3)*y)+heightoffset;
@@ -150,6 +152,7 @@ public class CharacterIcon extends JLabel {
 			heightoffset = 0;
 			widthoffset = (int) ((imageSize+0.6-width)/2);
 		}
+		this.img = new ImageIcon(img);
 		super.setIcon(new ImageIcon(img));
 		x = (int)((imageSize+0.6)*x)+widthoffset;
 		y = (int)((imageSize-0.3)*y)+heightoffset;
@@ -160,6 +163,7 @@ public class CharacterIcon extends JLabel {
 	private void resetImage() {
 		Image img = new ImageIcon("Chara GIFs/" + path + ".gif").getImage();
 		img = img.getScaledInstance(width, height, 0);
+		this.img = new ImageIcon(img);
 		super.setIcon(new ImageIcon(img));
 		super.setBounds(x, y, width, height);
 	}
@@ -181,5 +185,8 @@ public class CharacterIcon extends JLabel {
 		this.x = (int)((imageSize+0.6)*x)+widthoffset;
 		this.y = (int)((imageSize-0.3)*y)+heightoffset;
 		resetImage();
+	}
+	public ImageIcon getImg() {
+		return img;
 	}
 }
