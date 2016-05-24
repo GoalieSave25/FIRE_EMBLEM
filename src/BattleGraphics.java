@@ -24,18 +24,6 @@ public class BattleGraphics extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					BattleGraphics frame = new BattleGraphics(new Battle(unitOne, unitTwo));
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 	public BattleGraphics(Battle battle)
 	{
 		unitOne = battle.getAttacker();
@@ -54,7 +42,7 @@ public class BattleGraphics extends JFrame {
 		
 		textArea = new JTextArea();
 		textArea.setBackground(Color.BLACK);
-		textArea.setBounds(20, 177, 404, 85);
+		textArea.setBounds(20, 192, 404, 70);
 		textArea.setEditable(false);
 		textArea.setForeground(Color.WHITE);
 		contentPane.add(textArea);
@@ -99,7 +87,7 @@ public class BattleGraphics extends JFrame {
 		JTextArea textArea = new JTextArea();
 		textArea.setForeground(Color.WHITE);
 		textArea.setBackground(Color.BLACK);
-		textArea.setBounds(20, 177, 404, 85);
+		textArea.setBounds(20, 192, 404, 70);
 		textArea.setEditable(false);
 		contentPane.add(textArea);
 		
