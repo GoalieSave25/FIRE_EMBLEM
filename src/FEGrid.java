@@ -383,7 +383,7 @@ public class FEGrid
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
-		frame.setBounds((int)(width/2-1000/2), (int)(height/2-600/2), 1017, 613);
+		frame.setBounds((int)(width/2-1017/2), (int)(height/2-613/2), 1017, 613);
 		frame.setContentPane(display);
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
