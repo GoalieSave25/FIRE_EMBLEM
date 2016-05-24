@@ -21,8 +21,8 @@ public class Menu2 extends JFrame {
 	private Unit[] enemies = new Unit[8];
 	private Characters baseCharacters = new Characters(true);
 	private Characters base2Characters = new Characters(false);
-	private Unit darkMage1 = new Unit(25,19,24,16,19,18,19,22,5, new Weapon(11,1,60,1,"Arcthunder"), new ImageIcon("Chara GIFs/11.gif"), true, true, "11");
-	private Unit darkMage2 = new Unit(25,19,24,16,19,18,19,22,5, new Weapon(11,1,60,1,"Arcthunder"), new ImageIcon("Chara GIFs/11.gif"), true, false, "11");
+	private Unit darkMage1 = new Unit(25,19,24,16,19,18,19,22,5, new Weapon(11,1,60,2,"Arcthunder"), new ImageIcon("Chara GIFs/11.gif"), true, true, "11");
+	private Unit darkMage2 = new Unit(25,19,24,16,19,18,19,22,5, new Weapon(11,1,60,2,"Arcthunder"), new ImageIcon("Chara GIFs/11.gif"), true, false, "11");
 	private Unit savage1 = new Unit(45,24,19,16, 20, 17,23,18, 5, new Weapon(14,1,65,1,"Steel Axe"), new ImageIcon("Chara GIFs/9.gif"), true, true, "9");
 	private Unit savage2 = new Unit(45,24,19,16, 20, 17,23,18, 5, new Weapon(14,1,65,1,"Steel Axe"), new ImageIcon("Chara GIFs/9.gif"), true, false, "9");
 	private JButton myrmidon, mage, thief, cavalier, knight, fighter, mercenary, archer, darkMage, savage;
@@ -465,6 +465,18 @@ public class Menu2 extends JFrame {
 		lblArcher.setHorizontalAlignment(SwingConstants.CENTER);
 		lblArcher.setBounds(482, 330, 97, 23);
 		contentPane.add(lblArcher);
+		
+		JLabel lblSavage = new JLabel("Savage");
+		lblSavage.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		lblSavage.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSavage.setBounds(338, 472, 97, 23);
+		contentPane.add(lblSavage);
+		
+		JLabel lbldarkMage = new JLabel("Dark Mage");
+		lbldarkMage.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		lbldarkMage.setHorizontalAlignment(SwingConstants.CENTER);
+		lbldarkMage.setBounds(482, 472, 97, 23);
+		contentPane.add(lbldarkMage);
 		
 		JButton btnBack = new JButton("Return to Main Menu");
 		btnBack.setFont(new Font("Papyrus", Font.PLAIN, 11));
