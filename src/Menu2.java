@@ -21,8 +21,8 @@ public class Menu2 extends JFrame {
 	private Unit[] enemies = new Unit[8];
 	private Characters baseCharacters = new Characters(true);
 	private Characters base2Characters = new Characters(false);
-	private Unit darkMage1 = new Unit(25,19,24,16,19,18,19,22,5, new Weapon(11,1,60,2,"Arcthunder"), new ImageIcon("Chara GIFs/11.gif"), true, true, "11");
-	private Unit darkMage2 = new Unit(25,19,24,16,19,18,19,22,5, new Weapon(11,1,60,2,"Arcthunder"), new ImageIcon("Chara GIFs/11.gif"), true, false, "11");
+	private Unit darkMage1 = new Unit(25,19,24,16,19,18,19,22,5, new Weapon(11,2,60,1,"Arcthunder"), new ImageIcon("Chara GIFs/11.gif"), true, true, "11");
+	private Unit darkMage2 = new Unit(25,19,24,16,19,18,19,22,5, new Weapon(11,2,60,1,"Arcthunder"), new ImageIcon("Chara GIFs/11.gif"), true, false, "11");
 	private Unit savage1 = new Unit(45,24,19,16, 20, 17,23,18, 5, new Weapon(14,1,65,1,"Steel Axe"), new ImageIcon("Chara GIFs/9.gif"), true, true, "9");
 	private Unit savage2 = new Unit(45,24,19,16, 20, 17,23,18, 5, new Weapon(14,1,65,1,"Steel Axe"), new ImageIcon("Chara GIFs/9.gif"), true, false, "9");
 	private JButton myrmidon, mage, thief, cavalier, knight, fighter, mercenary, archer, darkMage, savage;
