@@ -67,7 +67,6 @@ public class Main extends JFrame {
 		}
 		for(int x = 0; x < 10; x++)
 			a[x][x] = "PERSON";
-		Grid grid = new Grid(a);
 		
 		double imageSize = 58.9;
 		JLayeredPane l = new JLayeredPane();

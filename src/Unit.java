@@ -7,8 +7,11 @@ public class Unit extends Stats
 	private boolean alreadyatt;
 	private boolean alreadymov;
 	private boolean person;
+	private boolean friendly;
+	private ImageIcon sprite;
+	private String pic;
 	
-	public Unit (int HP, int STRENGTH, int MAGIC, int SKILL, int SPEED, int LUCK, int DEFENSE, int RESISTANCE, int MOVEMENT, Weapon weapn, ImageIcon sprite, boolean p)
+	public Unit (int HP, int STRENGTH, int MAGIC, int SKILL, int SPEED, int LUCK, int DEFENSE, int RESISTANCE, int MOVEMENT, Weapon weapn, ImageIcon image, boolean p, boolean f, String im)
     {
 		super(HP, STRENGTH, MAGIC, SKILL, SPEED, LUCK, DEFENSE, RESISTANCE, MOVEMENT);
 		weapon = weapn;
@@ -16,6 +19,9 @@ public class Unit extends Stats
 		alreadyatt = false;
 		alreadymov = false;
 		person = p;
+		friendly = f;
+		sprite = image;
+		pic = im;
     }
 	
 	//add getHP
@@ -31,6 +37,7 @@ public class Unit extends Stats
 	{
 		return super.getLuck() + (int) weapon.getCrit();
 	}
+	
 	public void setAttack(boolean a)
 	{
 		attack = a;
@@ -58,5 +65,30 @@ public class Unit extends Stats
 	public boolean getPerson()
 	{
 		return person;
+	}
+	
+	public boolean friendly()
+	{
+		return friendly;
+	}
+	
+	public ImageIcon getImage()
+	{
+		return sprite;
+	}
+	
+	public void setImage(ImageIcon a)
+	{
+		sprite = a;
+	}
+	
+	public String getPic()
+	{
+		return pic;
+	}
+	
+	public void setPic(String a)
+	{
+		pic = a;
 	}
 }

@@ -66,7 +66,9 @@ public class Menu1 extends JFrame {
 				contentPane.removeAll();
 				contentPane.setVisible(false);
 				dispose();
-				new Main("1");
+				Characters a = new Characters(true);
+				Characters b = new Characters(false);
+				new FEGrid(a, b);
 			}
 		});
 		btnQuickStart.setBounds(10, 259, 150,100);
