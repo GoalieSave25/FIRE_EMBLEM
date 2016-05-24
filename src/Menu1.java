@@ -80,8 +80,8 @@ public class Menu1 extends JFrame {
 		btnCustomStart.setFont(new Font("Papyrus", Font.PLAIN, 20));
 		btnCustomStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				dispose();
 				new Menu2();
+				dispose();
 			}
 		});
 		btnCustomStart.setBounds(10, 370, 150,100);

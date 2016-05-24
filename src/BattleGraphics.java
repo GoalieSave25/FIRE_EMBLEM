@@ -68,7 +68,7 @@ public class BattleGraphics extends JFrame {
 		labelDefender.setBounds(344, 103, 80, 63);
 		contentPane.add(labelDefender);
 		
-		JLabel lblNewLabel = new JLabel(new ImageIcon("bg-battle.jpg"));
+		JLabel lblNewLabel = new JLabel(new ImageIcon("Chara GIFs/bg-battle.jpg"));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(0, 0, 439, 262);
 		contentPane.add(lblNewLabel);
