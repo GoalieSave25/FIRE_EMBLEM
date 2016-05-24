@@ -37,8 +37,8 @@ public class FEGrid
 							{
 								grid[k][l].setText("bl");
 								grid[k][l].getUnit().setPic("blue");
-								grid[k][l].getUnit().setImage(new ImageIcon("Chara GIFs/blue.gif"));
-								grid[k][l].setIcon(new ImageIcon("Chara GIFs/blue.gif"));
+								grid[k][l].getUnit().setImage(new ImageIcon("blue.png"));
+								grid[k][l].setBlue();
 								grid[k][l].setExt("move");
 							}
 						}
@@ -143,14 +143,14 @@ public class FEGrid
 									grid[k][l].setText("p1");
 									grid[k][l].getUnit().setPic((Integer.parseInt(grid[k][l].getUnit().getPic()) - 12) + "");
 									grid[k][l].getUnit().setImage(new ImageIcon("Chara GIFs/" + grid[k][l].getUnit().getPic() + ".gif"));
-									grid[k][l].setIcon(grid[k][l].getUnit().getImage());
+									grid[k][l].setRed();
 								}
 								else
 								{
 									grid[k][l].setText("p2");
 									grid[k][l].getUnit().setPic((Integer.parseInt(grid[k][l].getUnit().getPic()) - 12) + "");
 									grid[k][l].getUnit().setImage(new ImageIcon("Chara GIFs/" + grid[k][l].getUnit().getPic() + ".gif"));
-									grid[k][l].setIcon(grid[k][l].getUnit().getImage());
+									grid[k][l].setRed();
 								}
 								
 								grid[k][l].setExt("player");
@@ -357,6 +357,14 @@ public class FEGrid
 			
 			public void setIcon(ImageIcon icon) {
 				super.setIcon(new CharacterIcon(has[0].getPic()).getImg());
+			}
+			
+			public void setBlue() {
+				super.setIcon(new SpriteIcon("blue.png").getImg());
+			}
+			
+			public void setRed() {
+				super.setIcon(new SpriteIcon("red.png").getImg());
 			}
 		}
 		

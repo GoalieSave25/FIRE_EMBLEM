@@ -14,6 +14,7 @@ public class SpriteIcon extends JLabel {
 	private double origheight = 20;
 	private int widthoffset = 2;
 	private int heightoffset = 3;
+	private ImageIcon img;
 	
 	public SpriteIcon(String filepath) {
 		super();
@@ -29,12 +30,35 @@ public class SpriteIcon extends JLabel {
 			img = img.getScaledInstance((int) ((origwidth/origheight)*width), height, 0);
 			width = (int) ((origwidth/origheight)*width);
 		}
+		this.img = new ImageIcon(img);
 		super.setIcon(new ImageIcon(img));
 		x = (int)((imageSize+0.6)*x)+widthoffset;
 		y = (int)((imageSize-0.3)*y)+heightoffset;
 		super.setIcon(new ImageIcon(img));
 		super.setBounds(x, y, width, height);
 	}
+	
+	public SpriteIcon(ImageIcon img) {
+		super();
+		ImageIcon icon = img;
+		Image img1 = icon.getImage();
+		width = (int)(imageSize+0.6)-5;
+		height = (int)(imageSize-0.3)-5;
+		if(origwidth > origheight) {
+			img1 = img1.getScaledInstance(width, (int) ((origheight/origwidth)*height), 0);
+			height = (int) ((origheight/origwidth)*height);
+		} else {
+			img1 = img1.getScaledInstance((int) ((origwidth/origheight)*width), height, 0);
+			width = (int) ((origwidth/origheight)*width);
+		}
+		this.img = new ImageIcon(img1);
+		super.setIcon(new ImageIcon(img1));
+		x = (int)((imageSize+0.6)*x)+widthoffset;
+		y = (int)((imageSize-0.3)*y)+heightoffset;
+		super.setIcon(new ImageIcon(img1));
+		super.setBounds(x, y, width, height);
+	}
+	
 	public SpriteIcon(String filepath, int x, int y) {
 		super();
 		path = filepath;
@@ -79,5 +103,8 @@ public class SpriteIcon extends JLabel {
 		this.x = (int)((imageSize+0.6)*x)+widthoffset;
 		this.y = (int)((imageSize-0.3)*y)+heightoffset;
 		resetImage();
+	}
+	public ImageIcon getImg() {
+		return img;
 	}
 }
