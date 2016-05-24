@@ -2,26 +2,60 @@
 public class Battle 
 {
 	private Unit attack, defend;
+	private BattleGraphics battleGraphics;
+	private String send = "";
 	public Battle(Unit attack, Unit defend)
 	{
 		this.attack = attack;
 		this.defend = defend;
+		battleGraphics = new BattleGraphics(this);
+		battleGraphics.setVisible(true);
+	}
+	public Unit getAttacker()
+	{
+		return attack;
+	}
+	public Unit getDefender()
+	{
+		return defend;
 	}
 	public void battle()
 	{
 		attack();
-		if(attack.getWeapon().getRng() == defend.getWeapon().getRng())
-			counterAttack();
-		if(attack.getSpeed() >= defend.getSpeed() + 5)
-			attack();
+		if(defend.getHP() > 0)
+		{
+			if(attack.getWeapon().getRng() == defend.getWeapon().getRng())
+				counterAttack();
+			if(attack.getHP() > 0)
+			{	
+				if(attack.getSpeed() >= defend.getSpeed() + 5)
+					attack();
+				if(defend.getHP() <= 0)
+				{
+					send += "Defeneder was KOed!";
+				}
+			}
+			else
+			{
+				send += "Attacker was KOed!";
+			}
+		}
+		else
+			send += "Defender was KOed!";
+		battleGraphics.textArea(send);
+		send = "";
 	}
 	public void attack()
 	{
-		defend.looseHP(getDamage(attack, defend));
+		int damageDealt = getDamage(attack, defend);
+		send += "Attacker did " + damageDealt + " DMG to Defender!\n";
+		defend.looseHP(damageDealt);
 	}
 	public void counterAttack()
 	{
-		attack.looseHP(getDamage(defend, attack));
+		int damageDealt = getDamage(attack, defend);
+		send += "Defender did " + damageDealt + " DMG to Attacker!\n";
+		attack.looseHP(damageDealt);
 	}
 	public int getDamage(Unit attacker, Unit defender)
 	{	
@@ -38,9 +72,14 @@ public class Battle
 		if(!attacker.getWeapon().getName().contains("thunder"))
 			damage = attacker.getStrength() + weaponDamage - defender.getDefense();
 		else
+		{
 			damage = attacker.getMagic() + weaponDamage - defender.getDefense();
+		}
 		if(randCrit < crit)
-			damage *= 3;		
+		{
+			send += "CRIT\n";
+			damage *= 3;	
+		}
 		return damage;
 	}
 	public int getCritChance(Unit atk, Unit def)

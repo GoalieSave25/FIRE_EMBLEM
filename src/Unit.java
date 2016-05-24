@@ -9,6 +9,7 @@ public class Unit extends Stats
 	private boolean person;
 	private boolean friendly;
 	private ImageIcon sprite;
+	private ImageIcon battleSprite;
 	private String pic;
 	
 	public Unit (int HP, int STRENGTH, int MAGIC, int SKILL, int SPEED, int LUCK, int DEFENSE, int RESISTANCE, int MOVEMENT, Weapon weapn, ImageIcon image, boolean p, boolean f, String im)
@@ -21,6 +22,7 @@ public class Unit extends Stats
 		person = p;
 		friendly = f;
 		sprite = image;
+		battleSprite = image;
 		pic = im;
     }
 	
@@ -80,6 +82,10 @@ public class Unit extends Stats
 	public void setImage(ImageIcon a)
 	{
 		sprite = a;
+	}
+	public ImageIcon getImageAlways()
+	{
+		return battleSprite;
 	}
 	
 	public String getPic()
