@@ -56,6 +56,7 @@ public class BattleGraphics extends JFrame {
 		textArea.setBackground(Color.BLACK);
 		textArea.setBounds(20, 177, 404, 85);
 		textArea.setEditable(false);
+		textArea.setForeground(Color.WHITE);
 		contentPane.add(textArea);
 		
 		labelAttacker = new JLabel(unitOne.getImageAlways());
@@ -96,6 +97,7 @@ public class BattleGraphics extends JFrame {
 		contentPane.add(btnReturn);
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setForeground(Color.WHITE);
 		textArea.setBackground(Color.BLACK);
 		textArea.setBounds(20, 177, 404, 85);
 		textArea.setEditable(false);
