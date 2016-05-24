@@ -21,7 +21,7 @@ import java.awt.event.ActionEvent;
 public class Menu1 extends JFrame {
 	private JPanel contentPane;
 	public static void main(String[] args) {
-		new AudioPlayer("My_Heart.wav");
+		new AudioPlayer("music.wav");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

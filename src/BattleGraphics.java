@@ -1,5 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -11,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import java.awt.Color;
+import java.awt.Dimension;
+
 import javax.swing.JButton;
 
 public class BattleGraphics extends JFrame {
@@ -26,11 +30,15 @@ public class BattleGraphics extends JFrame {
 	 */
 	public BattleGraphics(Battle battle)
 	{
+		setIconImage(new ImageIcon("icon.jpg").getImage());
+		setTitle("Fire Emblem - Battle");
 		unitOne = battle.getAttacker();
 		unitTwo = battle.getDefender();
-		setTitle("Battle!");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		double width = screenSize.getWidth();
+		double height = screenSize.getHeight();
+		setBounds((int)(width/2-450/2), (int)(height/2-300/2), 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -38,12 +46,17 @@ public class BattleGraphics extends JFrame {
 		
 		JButton btnReturn = new JButton("RETURN TO MAP");
 		btnReturn.setBounds(0, 239, 433, 23);
+		btnReturn.setFocusPainted(false);
+		btnReturn.setBackground(new Color(210, 180, 140));
+		btnReturn.setFont(new Font("Papyrus", Font.BOLD, 10));
 		contentPane.add(btnReturn);
 		
 		textArea = new JTextArea();
 		textArea.setBackground(Color.BLACK);
-		textArea.setBounds(20, 192, 404, 70);
+		textArea.setBounds(20, 185, 404, 70);
 		textArea.setEditable(false);
+		textArea.setHighlighter(null);
+		textArea.setFont(new Font("Papyrus", Font.BOLD, 10));
 		textArea.setForeground(Color.WHITE);
 		contentPane.add(textArea);
 		
@@ -72,7 +85,8 @@ public class BattleGraphics extends JFrame {
 	 * Create the frame.
 	 */
 	public BattleGraphics() {
-		setTitle("Battle!");
+		setIconImage(new ImageIcon("icon.jpg").getImage());
+		setTitle("Fire Emblem - Battle");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -82,12 +96,16 @@ public class BattleGraphics extends JFrame {
 		
 		JButton btnReturn = new JButton("RETURN TO MAP");
 		btnReturn.setBounds(0, 239, 433, 23);
+		btnReturn.setFocusPainted(false);
+		btnReturn.setBackground(new Color(210, 180, 140));
+		btnReturn.setFont(new Font("Papyrus", Font.BOLD, 12));
 		contentPane.add(btnReturn);
 		
 		JTextArea textArea = new JTextArea();
 		textArea.setForeground(Color.WHITE);
 		textArea.setBackground(Color.BLACK);
-		textArea.setBounds(20, 192, 404, 70);
+		textArea.setBounds(20, 167, 404, 95);
+		textArea.setFont(new Font("Papyrus", Font.BOLD, 10));
 		textArea.setEditable(false);
 		contentPane.add(textArea);
 		

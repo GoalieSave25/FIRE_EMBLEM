@@ -467,13 +467,13 @@ public class Menu2 extends JFrame {
 		contentPane.add(lblArcher);
 		
 		JLabel lblSavage = new JLabel("Savage");
-		lblSavage.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		lblSavage.setFont(new Font("Papyrus", Font.PLAIN, 11));
 		lblSavage.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSavage.setBounds(338, 472, 97, 23);
 		contentPane.add(lblSavage);
 		
 		JLabel lbldarkMage = new JLabel("Dark Mage");
-		lbldarkMage.setFont(new Font("Comic Sans MS", Font.PLAIN, 11));
+		lbldarkMage.setFont(new Font("Papyrus", Font.PLAIN, 11));
 		lbldarkMage.setHorizontalAlignment(SwingConstants.CENTER);
 		lbldarkMage.setBounds(482, 472, 97, 23);
 		contentPane.add(lbldarkMage);
