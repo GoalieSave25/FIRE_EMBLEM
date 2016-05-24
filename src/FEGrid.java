@@ -385,7 +385,7 @@ public class FEGrid
 		int count2 = 0;
 		ImageLabel bg = new ImageLabel("battlescene.png");
 		display.add(bg, 0);
-		bg.setImageSize(1017, 640);
+		bg.setImageSize(1011, 640);
 		grid = new JLabel2[20][10];
 		turn = true;
 		
